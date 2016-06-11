@@ -1,3 +1,5 @@
+;;;; Answer to exercise 1.3
+
 ; define square procedure
 (define (square x)
   (* x x))

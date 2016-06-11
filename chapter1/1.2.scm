@@ -1,3 +1,5 @@
+;;;; Answer to exercise 1.2
+
 (/ (+ 5
       4
       (- 2
