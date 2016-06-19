@@ -16,6 +16,7 @@
     (/ (+ x y) 2))
 
 (define (good-enough? old-guess guess x)
-    (< (abs (- old-guess guess)) 0.001))
+    (< (abs (- old-guess guess))
+       (abs (* guess 0.001))))
 
 ;; This should work better for small and large numbers
