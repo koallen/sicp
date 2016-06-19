@@ -5,21 +5,21 @@
 
 ;; Let's define the sqrt procedure with an alternative good-enough? procedure.
 (define (sqrt-iter old-guess guess x)
-    (if (good-enough? old-guess guess x)
-        guess
-        (sqrt-iter guess (improve guess x) x)))
+  (if (good-enough? old-guess guess x)
+      guess
+      (sqrt-iter guess (improve guess x) x)))
 
 (define (improve guess x)
-    (average guess (/ x guess)))
+  (average guess (/ x guess)))
 
 (define (average x y)
-    (/ (+ x y) 2))
+  (/ (+ x y) 2))
 
 (define (good-enough? old-guess guess x)
-    (< (abs (- old-guess guess))
-       (abs (* guess 0.001))))
+  (< (abs (- old-guess guess))
+     (abs (* guess 0.001))))
 
 (define (sqrt x)
-    (sqrt-iter 0 1 x))
+  (sqrt-iter 0 1 x))
 
 ;; This should work better for small and large numbers
