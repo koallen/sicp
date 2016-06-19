@@ -19,4 +19,7 @@
     (< (abs (- old-guess guess))
        (abs (* guess 0.001))))
 
+(define (sqrt x)
+    (sqrt-iter 0 1 x))
+
 ;; This should work better for small and large numbers
