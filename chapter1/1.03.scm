@@ -1,14 +1,14 @@
 ;;;; Answer to exercise 1.3
 
-; define square procedure
+;; Define square procedure
 (define (square x)
   (* x x))
 
-; define sum of square procedure
+;; Define sum of square procedure
 (define (sum-of-square x y)
   (+ (square x) (square y)))
 
-; define sum of square of larger two numbers procedure
+;; Define sum of square of larger two numbers procedure
 (define (sum-of-square-larger-two x y z)
   (cond ((and (<= x y) (<= x z)) (sum-of-square y z))
         ((and (<= y x) (<= y z)) (sum-of-square x z))
