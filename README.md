@@ -10,4 +10,4 @@ My solutions to the book Structure and Interpretation of Computer Programs, a.k.
 
 ## Note
 - Solutions missing in this repo are written on paper. I’ll update a LaTeX version later.
-- Exercises 2.14 ~ 2.16 are not solved yet.
+- Exercises 2.14 ~ 2.16 are not done yet.
