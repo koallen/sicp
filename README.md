@@ -3,7 +3,7 @@ My solutions to the book Structure and Interpretation of Computer Programs, a.k.
 
 ## Progress
 - [x] Chapter 1 exercises (46 / 46)
-- [ ] Chapter 2 exercises (86 / 97)
+- [ ] Chapter 2 exercises (90 / 97)
 - [ ] Chapter 3 exercises (0 / 82)
 - [ ] Chapter 4 exercises (0 / 79)
 - [ ] Chapter 5 exercises (0 / 52)
