@@ -1,0 +1,27 @@
+;;;; Answer to exercise 3.7
+
+;; password-protected account
+(define (make-account balance password)
+  (define (withdraw amount)
+    (if (>= balance amount)
+        (begin (set! balance (- balance amount))
+               balance)
+        "Insufficient funds"))
+  (define (deposit amount)
+    (set! balance (+ balance amount))
+    balance)
+  (define (dispatch passwd m)
+    (if (eq? passwd password)
+        (cond ((eq? m 'withdraw) withdraw)
+              ((eq? m 'deposit) deposit)
+              ((eq? m 'verify-password) #t)
+              (else (error "Unknown request -- MAKE-ACCOUNT" m)))
+        (lambda (x) "Incorrect password")))
+  dispatch)
+
+(define (make-joint acc old-passwd new-passwd)
+  (if (acc old-passwd 'verify-password)
+      (lambda (passwd m)
+        (if (eq? passwd new-passwd)
+            (acc old-passwd m)
+            (acc 'bad-passwd m)))))
