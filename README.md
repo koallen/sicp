@@ -25,3 +25,4 @@ My solutions to the book Structure and Interpretation of Computer Programs, a.k.
  - 3.15
  - 3.20 (handwritten)
  - 3.36 (handwritten)
+ - 3.43
