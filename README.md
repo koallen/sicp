@@ -4,7 +4,7 @@ My solutions to the book Structure and Interpretation of Computer Programs, a.k.
 ## Progress
 - [x] Chapter 1 exercises (46 / 46)
 - [ ] Chapter 2 exercises (90 / 97)
-- [ ] Chapter 3 exercises (32 / 82)
+- [ ] Chapter 3 exercises (37 / 82)
 - [ ] Chapter 4 exercises (0 / 79)
 - [ ] Chapter 5 exercises (0 / 52)
 
@@ -24,3 +24,4 @@ My solutions to the book Structure and Interpretation of Computer Programs, a.k.
  - 3.11 (handwritten)
  - 3.15
  - 3.20 (handwritten)
+ - 3.36 (handwritten)
