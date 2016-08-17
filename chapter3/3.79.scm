@@ -1,0 +1,8 @@
+;;;; Answer to exercise 3.79
+
+;; generalized second-order differential equation solver
+(define (solve-2nd f dt y0 dy0)
+  (define y (integral (delay dy) y0 dt))
+  (define dy (integral (delay ddy) dy0 dt))
+  (define ddy (stream-map f y dy))
+  y)
