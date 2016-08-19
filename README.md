@@ -9,8 +9,7 @@ My solutions to the book Structure and Interpretation of Computer Programs, a.k.
 - [ ] Chapter 5 exercises (0 / 52)
 
 ## Note
-- Missing solutions for chapter 1 exercises are written on paper
-- Missing chapter 2 exercises
+- Unfinished exercises
  - 2.14
  - 2.15
  - 2.16
@@ -18,11 +17,12 @@ My solutions to the book Structure and Interpretation of Computer Programs, a.k.
  - 2.92
  - 2.93
  - 2.95
-- Missing chapter 3 exercises
- - 3.9 (handwritten)
- - 3.10 (handwritten)
- - 3.11 (handwritten)
  - 3.15
- - 3.20 (handwritten)
- - 3.36 (handwritten)
  - 3.43
+- Handwritten exercises
+ - All missing exercises in chapter 1
+ - 3.9
+ - 3.10
+ - 3.11
+ - 3.20
+ - 3.36
