@@ -1,5 +1,9 @@
 ;;;; evaluator.scm
 
+(load "chapter4/4.04.scm")
+(load "chapter4/4.06.scm")
+(load "chapter4/4.07.scm")
+
 (define (eval exp evn)
   (cond ((self-evaluating? exp) exp)
         ((variable? exp) (lookup-variable-value exp env))
@@ -14,6 +18,10 @@
         ((begin? exp)
          (eval-sequence (begin-actions exp) env))
         ((cond? exp) (eval (cond->if exp) env))
+		((and? exp) (eval (and->if exp) env))
+		((or? exp) (eval (or->if exp) env))
+		((let? exp) (eval (let->combination exp) env))
+		((let*? exp) (eval (let*->nested-lets exp) env))
         ((application? exp)
          (apply (eval (operator exp) env)
                 (list-of-values (operands exp) env)))
@@ -25,8 +33,7 @@
          (apply-primitive-procedure procedure arguments))
         ((compound-procedure? procedure)
          (eval-sequence
-           (procedure-body procedure)
-           (extend-environment
+           (procedure-body procedure) (extend-environment
              (procedure-parameters procedure)
              arguments
              (procedure-environment procedure))))
@@ -180,20 +187,23 @@
 
 (define (cond-predicate clause) (car clause))
 
-(define (cond-actions clause) (cdr clause))
+(define (cond-actions clause)
+  (if (eq? (cadr clause) '=>) ;; check for additional syntax
+	  (cons (caddr clause) (cond-predicate clause))
+	  (cdr clause)))
 
 (define (cond->if exp)
   (expand-clauses (cond-clauses exp)))
 
 (define (expand-clauses clauses)
   (if (null? clauses)
-	'false
-	(let ((first (car clauses))
-		  (rest (cdr clauses)))
-	  (if (cond-else-clause? first)
-		(if (null? rest)
-		    (sequence->exp (cond-actions first))
-			(error "ELSE clause isn't last -- COND->IF" clauses))
-		(make-if (cond-predicate first)
-				 (sequence->exp (cond-actions first))
-				 (expand-clauses rest))))))
+	  'false
+	  (let ((first (car clauses))
+	  	    (rest (cdr clauses)))
+	    (if (cond-else-clause? first)
+	  	    (if (null? rest)
+	  	        (sequence->exp (cond-actions first))
+	  	    	(error "ELSE clause isn't last -- COND->IF" clauses))
+	  	    (make-if (cond-predicate first)
+	  	    		 (sequence->exp (cond-actions first))
+	  	    		 (expand-clauses rest))))))

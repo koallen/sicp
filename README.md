@@ -5,7 +5,7 @@ My solutions to the book Structure and Interpretation of Computer Programs, a.k.
 - [x] Chapter 1 exercises (46 / 46)
 - [ ] Chapter 2 exercises (90 / 97)
 - [ ] Chapter 3 exercises (80 / 82)
-- [ ] Chapter 4 exercises (1 / 79)
+- [ ] Chapter 4 exercises (6 / 79)
 - [ ] Chapter 5 exercises (0 / 52)
 
 ## Note
@@ -19,6 +19,7 @@ My solutions to the book Structure and Interpretation of Computer Programs, a.k.
  - 2.95
  - 3.15
  - 3.43
+ - 4.3
 - Handwritten exercises
  - All missing exercises in chapter 1
  - 3.9
